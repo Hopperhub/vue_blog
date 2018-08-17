@@ -1,5 +1,7 @@
 <template>
-  <div class="hello">HelloWorld</div>
+  <div class="hello">1
+    <Button type="error">Error</Button>
+  </div>
 </template>
 
 <script>
