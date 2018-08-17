@@ -70,3 +70,7 @@ npm test
   Vue.component('Button', Button);
   Vue.component('Table', Table);
   ```
+
+### 操作
+
+- [使用 favicon.ico](https://www.jianshu.com/p/6682e8c2a973)
