@@ -4,7 +4,7 @@
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
@@ -27,4 +27,46 @@ npm run e2e
 npm test
 ```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## [iview](https://www.iviewui.com/)
+
+### 安装
+
+- `npm i iview --save`
+
+### 导入
+
+- 在 webpack 的入口文件 main.js 中导入
+
+- 组件库：`import iView from 'iview'`
+
+- 样式库：`import 'iview/dist/styles/iview.css'`
+
+### 使用
+
+#### 方法一：
+
+- `Vue.use(iView)`
+
+#### 方法二：按需引用
+
+- 安装加载组件：`npm i babel-plugin-import --save-dev`
+
+- `.babelrc` 配置
+
+  ```
+  // .babelrc
+  {
+  "plugins": [["import", {
+    "libraryName": "iview",
+    "libraryDirectory": "src/components"
+  }]]
+  }
+  ```
+
+- 按需引入组件
+
+  ```
+  import { Button, Table } from 'iview';
+  Vue.component('Button', Button);
+  Vue.component('Table', Table);
+  ```
