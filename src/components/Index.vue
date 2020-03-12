@@ -2,12 +2,17 @@
   <div class="wrap">
     <Header></Header>
     <div class="body">
-      <h-form>
-        <h-form-item label="用户名">
-          <h-input v-model="inputVal" placeholder="请输入用户名"/>
+      <h-form :model="model" :rules="rules">
+        <h-form-item label="用户名" prop="userName">
+          <h-input v-model="model.userName" placeholder="请输入用户名"/>
+        </h-form-item>
+        <h-form-item label="密码">
+          <h-input v-model="model.password" type="password" placeholder="请输入用户名"/>
+        </h-form-item>
+        <h-form-item>
+          <button @click="login">登录</button>
         </h-form-item>
       </h-form>
-			<div>{{inputVal}}</div>
     </div>
   </div>
 </template>
@@ -28,10 +33,28 @@ export default {
   },
   data () {
     return {
-      inputVal: ''
+      model: {
+        userName: '',
+        password: '',
+      },
+      rules: {
+        userName: [{
+          required: true,
+          message: '请输入用户名',
+        }],
+        password: [{
+          required: true,
+          message: '请输入密码',
+        }],
+      },
+    };
+  },
+  methods: {
+    login() {
+      console.log(this.model);
     }
   }
-}
+};
 </script>
 
 <style scoped>
