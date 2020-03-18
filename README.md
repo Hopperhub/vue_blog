@@ -70,3 +70,7 @@ npm test
   Vue.component('Button', Button);
   Vue.component('Table', Table);
   ```
+
+  ## js 库
+
+  - [async-validator](https://github.com/yiminghe/async-validator) 校验

@@ -31,7 +31,7 @@ export default {
     input ({ target: { value } }) {
       this.$emit('input', value);
       if (this.prop) {
-        this.bus.$emit(this.prop, 'userName')
+        this.bus.$emit(this.prop);
       }
     }
   }
