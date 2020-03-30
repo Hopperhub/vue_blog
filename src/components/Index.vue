@@ -22,6 +22,8 @@ import Header from './Header/index';
 import HForm from './Form/HForm';
 import HFormItem from './Form/HFormItem';
 import HInput from './Form/HInput';
+import Notice from './Notice';
+import create from '../utils/create';
 
 export default {
 	name: 'Index',
@@ -52,11 +54,16 @@ export default {
 	methods: {
 		login() {
 			this.$refs.loginForm.validate(res => {
-				if (res) {
-					this.$Message.success('表单校验通过');
-				} else {
-					this.$Message.error('表单校验失败');
-				}
+				// if (res) {
+				// 	this.$Message.success('表单校验通过');
+				// } else {
+				// 	this.$Message.error('表单校验失败');
+				// }
+				const notice = create(Notice, {
+					title: '提醒',
+					message: res ? '表单校验通过' : '表单校验失败',
+				});
+				notice.show();
 			})
 		}
 	}
